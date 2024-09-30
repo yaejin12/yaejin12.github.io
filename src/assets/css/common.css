@@ -2,7 +2,7 @@
 
 html,
 body {
-  font-size: 16px;
+  font-size: calc(100vw * (15 / 1920));
   width: 100%;
   height: auto;
 }

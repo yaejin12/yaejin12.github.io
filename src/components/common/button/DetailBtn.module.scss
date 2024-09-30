@@ -5,14 +5,14 @@
   justify-content: center;
   font-weight: 500;
 
-  font-size: 22px;
-  padding: 15px 20px;
-  border-radius: 40px;
+  font-size: calc(100vw * (22 / 1920));
+  padding: calc(100vw * (20 / 1920)) calc(100vw * (35 / 1920));
+  border-radius: calc(100vw * (40 / 1920));
   color: #fff;
   background-color: var(--color-bk);
 
   img {
-    margin-left: 13px;
-    width: 16px;
+    margin-left: calc(100vw * (13 / 1920));
+    width: calc(100vw * (22 / 1920));
   }
 }

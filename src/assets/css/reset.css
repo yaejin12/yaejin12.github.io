@@ -76,7 +76,7 @@ body {
   width: auto;
   height: 100%;
   font-family: "Pretendard", sans-serif;
-  font-size: 10px;
+  font-size: calc(100vw * (10 / 1920));
   color: var(--color-bk);
 }
 

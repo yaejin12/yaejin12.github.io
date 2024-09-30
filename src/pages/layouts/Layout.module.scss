@@ -1,7 +1,7 @@
 header {
   // background-color: aqua;
   width: 100%;
-  height: 80px;
+  height: calc(100vw * (80 / 1920));
   position: absolute;
   top: 0;
   left: 0;
@@ -18,7 +18,7 @@ header {
     max-width: 1400px !important;
     margin: 0 auto;
     height: 100%;
-    padding-top: 50px;
+    // padding-top: calc(100vw * (50 / 1920));
   }
 
   .gnb {
@@ -28,19 +28,20 @@ header {
     align-items: center;
 
     .nav {
+      padding-top: calc(100vw * (50 / 1920));
       display: flex;
     }
 
     .project,
     .intro {
-      margin-left: 80px;
-      padding: 4px 20px;
-      font-size: 20px;
+      margin-left: calc(100vw * (60 / 1920));
+      padding: calc(100vw * (4 / 1920)) calc(100vw * (20 / 1920));
+      font-size: calc(100vw * (20 / 1920));
       font-weight: 500;
 
       cursor: pointer;
       overflow: hidden;
-      border-radius: 50px;
+      border-radius: calc(100vw * (50 / 1920));
 
       /* 배경색과 텍스트 색상이 부드럽게 전환 */
       transition: background-color 0.3s ease, color 0.3s ease;
@@ -88,27 +89,27 @@ header {
 .socialNav {
   position: fixed;
   z-index: 99999;
-  right: 70px;
-  bottom: 70px;
+  right: calc(100vw * (70 / 1920));
+  bottom: calc(100vw * (70 / 1920));
   ul {
     li {
       display: flex;
       align-items: center;
       width: 100%;
       height: 100%;
-      margin-top: 20px;
+      margin-top: calc(100vw * (20 / 1920));
       justify-content: end;
 
       .linkTitle {
-        margin-right: 10px;
+        margin-right: calc(100vw * (10 / 1920));
         text-align: right;
         font-weight: 500;
         color: var(--color-bk);
         display: none;
         transition: opacity 0.3s ease;
         height: 100%;
-        padding: 5px 10px;
-        border-radius: 50px;
+        padding: calc(100vw * (5 / 1920)) calc(100vw * (10 / 1920));
+        border-radius: calc(100vw * (50 / 1920));
         background-color: rgba($color: #ffffff, $alpha: 0.8);
       }
 
@@ -117,10 +118,10 @@ header {
       }
 
       a {
-        width: 80px;
-        height: 80px;
+        width: calc(100vw * (80 / 1920));
+        height: calc(100vw * (80 / 1920));
 
-        border-radius: 50px;
+        border-radius: calc(100vw * (50 / 1920));
         background-color: #fff;
         box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.2);
         cursor: pointer;
@@ -131,20 +132,20 @@ header {
       }
 
       .img {
-        width: 48px;
+        width: calc(100vw * (48 / 1920));
 
         display: flex;
         justify-content: center;
         align-items: center;
 
         &.home {
-          width: 40px;
+          width: calc(100vw * (40 / 1920));
         }
         &.siteIcon {
-          width: 38px;
+          width: calc(100vw * (38 / 1920));
         }
         &.pptIcon {
-          width: 30px;
+          width: calc(100vw * (38 / 1920));
         }
       }
     }

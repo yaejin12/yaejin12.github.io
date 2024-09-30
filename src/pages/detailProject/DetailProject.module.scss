@@ -1,6 +1,6 @@
 .detailProjectWrapper {
   width: 100%;
-  padding: 130px;
+  padding: calc(100vw * (130 / 1920));
   position: relative;
   z-index: 999;
   height: 100%;
@@ -18,7 +18,7 @@
 
 // li
 .projectDetailBox {
-  padding: 50px 10px;
+  padding: calc(100vw * (50 / 1920)) calc(100vw * (10 / 1920));
   border-top: 1px solid var(--color-bk);
 
   display: flex;
@@ -33,10 +33,10 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 800px;
+  width: calc(100vw * (1000 / 1920));
 
   .h1ProjectTitle {
-    font-size: 45px;
+    font-size: calc(100vw * (50 / 1920));
     line-height: 140%;
     font-weight: 600;
     // width: 600px;
@@ -45,12 +45,14 @@
 
 .h2Info {
   display: flex;
-  margin-top: 10px;
+  margin-top: calc(100vw * (10 / 1920));
+  font-size: calc(100vw * (20 / 1920));
+  font-weight: 500;
 
   .h2InfoTitle {
-    font-style: 16px;
-    width: 95px;
-    font-weight: 500;
+    font-size: calc(100vw * (20 / 1920));
+    width: calc(100vw * (95 / 1920));
+
     color: var(--color-gr);
   }
 }
@@ -67,18 +69,18 @@
 }
 
 .infoDetail {
-  font-size: 25px;
+  font-size: calc(100vw * (25 / 1920));
   font-weight: 500;
-  line-height: 170%;
+  line-height: 150%;
 }
 
 .projectInfoBottomWrapper {
-  font-size: 17px;
+  font-size: calc(100vw * (18 / 1920));
   line-height: 150%;
-  padding-top: 60px;
-  padding-right: 60px;
+  padding-top: calc(100vw * (100 / 1920));
+  padding-right: calc(100vw * (60 / 1920));
   p {
-    margin-top: 10px;
+    margin-top: calc(100vw * (10 / 1920));
   }
 }
 
@@ -90,12 +92,12 @@
 .info {
   display: flex;
   align-items: center;
-  font-size: 17px;
+  font-size: calc(100vw * (23 / 1920));
   font-weight: 600;
   // margin-bottom: 15px;
   width: 100%;
   border-bottom: 1px solid var(--color-bk);
-  padding: 15px 0;
+  padding: calc(100vw * (15 / 1920)) 0;
 
   &:nth-child(1) {
     padding-top: 0;
@@ -106,11 +108,11 @@
   }
 
   .listName {
-    width: 200px;
+    width: calc(100vw * (200 / 1920));
   }
 
   p {
-    margin-left: 15px;
+    margin-left: calc(100vw * (16 / 1920));
   }
 
   .infoDetailText {
@@ -120,26 +122,26 @@
   &.work {
     line-height: 160%;
     .DetailWorkSkill {
-      font-size: 13px;
+      font-size: calc(100vw * (15 / 1920));
       font-weight: 400;
-      margin-top: 10px;
+      margin-top: calc(100vw * (10 / 1920));
     }
     &.info {
       align-items: start;
-      padding: 50px 0;
+      padding: calc(100vw * (50 / 1920)) 0;
     }
     &.info:nth-child(1) {
-      padding: 15px 0 50px 0;
+      padding: calc(100vw * (15 / 1920)) 0 calc(100vw * (50 / 1920)) 0;
     }
     .infoDetailText {
       flex-direction: column;
 
-      width: 500px;
+      width: calc(100vw * (700 / 1920));
       line-height: 160%;
 
       .detailWork {
-        margin-bottom: 5px;
-        margin-top: 50px;
+        margin-bottom: calc(100vw * (5 / 1920));
+        margin-top: calc(100vw * (50 / 1920));
 
         &:nth-child(1) {
           margin-top: 0;
@@ -147,7 +149,8 @@
       }
       .detailWorkSubText {
         font-weight: 400;
-        margin-top: 10px;
+        font-size: calc(100vw * (20 / 1920));
+        margin-top: calc(100vw * (20 / 1920));
       }
     }
   }
@@ -161,7 +164,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 1400px;
+  width: calc(100vw * (1650 / 1920));
   aspect-ratio: 16 / 9; /* 16:9 비율 유지 */
 }
 
@@ -171,8 +174,7 @@
 
 .imgSubWrapper {
   overflow: hidden;
-  width: 1400px;
-
+  width: 100%;
   .imgSubInner {
     display: flex;
   }
@@ -200,10 +202,10 @@
 /* 각 슬라이더 항목 */
 .imgSubItem {
   height: auto;
-  width: 1000px;
+  width: calc(100vw * (1000 / 1920));
   display: flex;
   flex-shrink: 0;
-  padding: 10px;
+  padding: calc(100vw * (10 / 1920));
   text-align: center;
   flex-wrap: nowrap;
 
@@ -249,3 +251,7 @@
     transform: 0;
   }
 }
+
+/* 데스크탑 (1200px 이상 1020) */
+// 모바일 이하 768
+// 450
