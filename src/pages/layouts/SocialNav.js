@@ -20,7 +20,7 @@ function SocialNav({ styles }) {
     if (isDetailPage) {
       setProject(projectDummy.find((project) => project.id === parseInt(id)));
 
-     
+      console.log("project!", project);
     }
   }, [isDetailPage, id, projectDummy]);
 

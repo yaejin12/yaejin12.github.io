@@ -17,7 +17,7 @@ function Introduce() {
       <div className={styles.inner}>
         {/* about Me Text */}
         {Rendering ? (
-          <MyIntroduce Rendering={Rendering}/>
+          <MyIntroduce Rendering={Rendering} />
         ) : (
           <About styles={styles} />
         )}
