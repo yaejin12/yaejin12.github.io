@@ -6,17 +6,6 @@ import Project from "./pages/project/Project"; // 정확한 경로
 import DetailProject3on3 from "./pages/detailProject/DetailProject3on3"; // 정확한 경로
 import DetailProject5jo from "./pages/detailProject/DetailProject5jo"; // 정확한 경로
 
-const detailProject = [
-  {
-    path: "3on3",
-    element: <DetailProject3on3 />,
-  },
-  {
-    path: "5jo",
-    element: <DetailProject5jo />,
-  },
-];
-
 function App() {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
@@ -27,13 +16,9 @@ function App() {
           <Route path="" element={<Main />} />
           <Route path="introduce" element={<Introduce />} />
           <Route path="project" element={<Project />}>
-            {detailProject.map((project) => (
-              <Route
-                key={project.path}
-                path={project.path}
-                element={project.element}
-              />
-            ))}
+            {/* 프로젝트별로 경로를 정적으로 작성 */}
+            <Route path="3on3" element={<DetailProject3on3 />} />
+            <Route path="5jo" element={<DetailProject5jo />} />
           </Route>
         </Route>
       </Routes>
