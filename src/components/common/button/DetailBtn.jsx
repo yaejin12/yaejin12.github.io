@@ -3,9 +3,7 @@ import styles from "./DetailBtn.module.scss";
 import { NavLink } from "react-router-dom";
 
 function DetailBtn({ text, detailIcon, link }) {
-  const isExternalLink = text === "바로가기";
-
-
+  const isExternalLink = text === "상세보기";
 
   return isExternalLink ? (
     <NavLink to={link}>
