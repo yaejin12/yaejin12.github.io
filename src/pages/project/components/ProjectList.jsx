@@ -10,7 +10,7 @@ function ProjectList({ styles, project }) {
 
   // 링크 정보와 이름을 매핑
   const links = [
-    { name: "상세보기", link: `${location.pathname}/${url.page}` },
+    { name: "상세보기", link: `/${url.page}` },
     { name: "사이트", link: url.site },
     { name: "GitHub", link: url.github },
   ];

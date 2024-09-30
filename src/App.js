@@ -15,11 +15,9 @@ function App() {
           {/* Layout 내부의 자식 라우트들 */}
           <Route path="" element={<Main />} />
           <Route path="introduce" element={<Introduce />} />
-          <Route path="project" element={<Project />}>
-            {/* 프로젝트별로 경로를 정적으로 작성 */}
-            <Route path="3on3" element={<DetailProject3on3 />} />
-            <Route path="5jo" element={<DetailProject5jo />} />
-          </Route>
+          <Route path="project" element={<Project />} />
+          <Route path="3on3" element={<DetailProject3on3 />} />
+          <Route path="5jo" element={<DetailProject5jo />} />
         </Route>
       </Routes>
     </BrowserRouter>

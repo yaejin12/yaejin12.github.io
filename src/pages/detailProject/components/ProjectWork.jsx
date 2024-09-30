@@ -5,9 +5,6 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
 function ProjectWork({ styles, project }) {
-
-  // const projectDummy = useSelector((action) => action.project.dummy);
-
   return (
     <DetailTemplate title={"내가 기여한 부분"}>
       {project.works.map((project) => {
