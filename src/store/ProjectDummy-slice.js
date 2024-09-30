@@ -21,6 +21,7 @@ const initialState = {
       video: "https://www.youtube.com/watch?v=qVWxRTHgnik&feature=youtu.be",
       subImg: [],
       url: {
+        page: "3on3",
         github: "https://github.com/3on3",
         site: "http://gwating.com/",
         notion:
@@ -159,6 +160,7 @@ const initialState = {
       video: "",
       subImg: [fivejoDetail1, fivejoDetail2, fivejoDetail3, fivejoSignUp],
       url: {
+        page: "5jo",
         github: "https://github.com/project5jo",
       },
 
