@@ -1,0 +1,20 @@
+.projectDetailBox {
+  padding: 50px 10px;
+  border-top: 1px solid var(--color-bk);
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.titleWrapper {
+  width: 800px;
+}
+
+.title {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.infoWrapper {
+  width: 100%;
+}

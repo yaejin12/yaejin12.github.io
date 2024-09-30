@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_레이어_1" data-name="레이어 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 340 335.1">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke-width: 0px;
+      }
+
+      .cls-4 {
+        mask: url(#mask);
+      }
+
+      .cls-2 {
+        fill: #d9d9d9;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-5 {
+        mask: url(#mask-1);
+      }
+    </style>
+    <mask id="mask" x="42" y="-2.9" width="229.6" height="296.4" maskUnits="userSpaceOnUse">
+      <g id="mask0_6_90" data-name="mask0 6 90">
+        <rect class="cls-2" x="42" y="-2.9" width="229.6" height="215.3"/>
+      </g>
+    </mask>
+    <mask id="mask-1" x="36.1" y="-1.4" width="267.7" height="294.9" maskUnits="userSpaceOnUse">
+      <g id="mask1_6_90" data-name="mask1 6 90">
+        <ellipse class="cls-2" cx="170" cy="182.5" rx="139.7" ry="102.7" transform="translate(-61.2 88.9) rotate(-25)"/>
+      </g>
+    </mask>
+  </defs>
+  <ellipse class="cls-3" cx="170" cy="182.5" rx="139.7" ry="102.7" transform="translate(-61.2 88.9) rotate(-25)"/>
+  <g class="cls-4">
+    <rect class="cls-1" x="42" y="-1.4" width="229.6" height="294.9"/>
+  </g>
+  <g class="cls-5">
+    <rect class="cls-1" x="42" y="-1.4" width="229.6" height="294.9"/>
+  </g>
+</svg>
