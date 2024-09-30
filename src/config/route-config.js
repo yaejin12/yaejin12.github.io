@@ -1,10 +1,6 @@
 import { Children } from "react";
 import Main from "../pages/main/Main";
-import {
-  createBrowserRouter,
-  createHashRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "../pages/layouts/Layout";
 import Introduce from "../pages/Introduce/Introduce";
 import Project from "../pages/project/Project";
@@ -16,7 +12,7 @@ const detailProject = [
     element: <DetailProject />,
   },
 ];
-export const router = createHashRouter([
+export const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
