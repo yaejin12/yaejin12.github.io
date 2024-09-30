@@ -7,7 +7,7 @@ function ProjectWorkDetail({ styles, project }) {
     <div className={`${styles.info} ${styles.work} `}>
       {/* 설명1 */}
       {/* 왼쪽 */}
-      <div>
+      <div className={styles.pageWrapper}>
         {/* 페이지 */}
         <p className={styles.listName}>{project.workPage}</p>
         {/* 스킬 */}

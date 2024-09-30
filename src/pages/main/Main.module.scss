@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "NEXON Lv1 Gothic OTF";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 // Main title css
 .wrapper {
   height: 100vh;
@@ -56,9 +64,9 @@
   padding-bottom: calc(100vw * (70 / 1920));
 
   .infoText {
-    font-size: calc(100vw * (20 / 1920));
+    font-size: calc(100vw * (22 / 1920));
     font-weight: 500;
-    line-height: 160%;
+    line-height: 180%;
   }
 }
 

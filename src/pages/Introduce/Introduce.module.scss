@@ -1,34 +1,32 @@
 .introduceWrapper {
-  height: 100vh;
   width: 100%;
-  // height: 100%;
+  position: relative;
+  min-height: 100vh;
+  background: #7a9ceb;
 
-  overflow: hidden;
   background-color: var(--color-bk);
-
-  // 위로 떠오르는 애니메이션
-  animation: chatAni 1s ease-out forwards;
 
   .inner {
     width: 100%;
     height: 100%;
     max-width: 1400px;
     margin: 0 auto;
-
-    .aboutText {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: #fff;
-
-      font-size: 115px;
-      font-weight: 500;
-
-      // 위로 떠오르는 애니메이션
-      animation: aboutMeText 1.7s ease-out forwards;
-    }
   }
+}
+
+// 인트로 효과
+.aboutText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  // height: 800px;
+  font-size: 115px;
+  font-weight: 600;
+
+  // 위로 떠오르는 애니메이션
+  animation: aboutMeText 1.7s ease-out forwards;
 }
 
 // =========about Me

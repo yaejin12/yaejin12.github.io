@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 
 function ProjectWork({ styles, project }) {
   return (
-    <DetailTemplate title={"내가 기여한 부분"}>
+    <DetailTemplate title={"내 역할"}>
       {project.works.map((project) => {
         return (
           <ProjectWorkDetail
