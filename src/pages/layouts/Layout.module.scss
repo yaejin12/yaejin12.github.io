@@ -28,7 +28,7 @@ header {
     align-items: center;
 
     .nav {
-      padding-top: calc(100vw * (50 / 1920));
+      padding-top: calc(100vw * (55 / 1920));
       display: flex;
     }
 
@@ -36,8 +36,8 @@ header {
     .intro {
       margin-left: calc(100vw * (60 / 1920));
       padding: calc(100vw * (4 / 1920)) calc(100vw * (20 / 1920));
-      font-size: calc(100vw * (20 / 1920));
-      font-weight: 500;
+      font-size: calc(100vw * (22 / 1920));
+      font-weight: 600;
 
       cursor: pointer;
       overflow: hidden;
@@ -103,7 +103,7 @@ header {
       .linkTitle {
         margin-right: calc(100vw * (10 / 1920));
         text-align: right;
-        font-weight: 500;
+        font-weight: 600;
         color: var(--color-bk);
         display: none;
         transition: opacity 0.3s ease;

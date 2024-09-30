@@ -6,7 +6,8 @@
   margin-right: calc(100vw * (5 / 1920));
 
   &.Bk {
-    border: 1px solid var(--color-bk);
+    border: 1px solid var(--color-gr);
     color: var(--color-bk);
+    font-size: calc(100vw * (25 / 1920));
   }
 }

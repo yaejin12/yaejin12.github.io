@@ -13,8 +13,8 @@ function SocialNav({ styles }) {
 
   const [project, setProject] = useState({});
   const { url = {} } = project;
-  const is3on3Page = location.pathname.startsWith(`/project/3on3`);
-  const is5joPage = location.pathname.startsWith(`/project/5jo`);
+  const is3on3Page = location.pathname.startsWith(`/3on3`);
+  const is5joPage = location.pathname.startsWith(`/5jo`);
   const isPage = is3on3Page || is5joPage;
   const projectDummy = useSelector((state) => state.project.dummy);
 
@@ -67,7 +67,7 @@ function SocialNav({ styles }) {
           link={url.github ? url.github : "https://github.com/yaejin12"}
           imgSrc={githubLogo}
           type={"outLink"}
-          linkType={is3on3Page || is5joPage ? "ProjectGitHub" : "My GitHub"}
+          linkType={is3on3Page || is5joPage ? "Project GitHub" : "My GitHub"}
         />
         <SocialNavLink
           styles={styles}

@@ -8,13 +8,13 @@ function DetailProject5jo() {
   const projectDummy = useSelector((action) => action.project.dummy);
 
   return (
-    <GradationBg>
-      <div className={styles.detailProjectWrapper}>
-        <div className={styles.inner}>
-          <DetailHeader project={projectDummy[1]} />
-        </div>
+    // <GradationBg>
+    <div className={styles.detailProjectWrapper}>
+      <div className={styles.inner}>
+        <DetailHeader project={projectDummy[1]} />
       </div>
-    </GradationBg>
+    </div>
+    // </GradationBg>
   );
 }
 

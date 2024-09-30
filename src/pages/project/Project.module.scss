@@ -17,7 +17,6 @@
   .projectList {
     .projectBox {
       padding: calc(100vw * (50 / 1920)) calc(100vw * (10 / 1920));
-      // border-bottom: 1px solid var(--color-bk);
       border-top: 1px solid var(--color-bk);
 
       display: flex;
@@ -31,7 +30,6 @@
 
       // 버튼
       .projectLink {
-        // width: 200px;
         display: flex;
 
         span {
@@ -42,7 +40,7 @@
       // img
 
       .projectImgWrapper {
-        width: calc(100vw * (830 / 1920));
+        width: calc(100vw * (860 / 1920));
         height: 100%;
       }
     }
@@ -51,11 +49,11 @@
 
 .projectText {
   font-size: calc(100vw * (50 / 1920));
-  line-height: 140%;
+  line-height: 130%;
   font-weight: 600;
 
   .infoDetail {
-    font-size: calc(100vw * (25 / 1920));
+    font-size: calc(100vw * (23 / 1920));
     font-weight: 500;
     margin-top: calc(100vw * (30 / 1920));
     line-height: 170%;
