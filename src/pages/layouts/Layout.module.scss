@@ -1,7 +1,7 @@
 header {
   // background-color: aqua;
   width: 100%;
-  height: calc(100vw * (80 / 1920));
+  height: calc(100vw * (80 / 1700));
   position: absolute;
   top: 0;
   left: 0;
@@ -15,10 +15,10 @@ header {
 
   .inner {
     // width: 100%;
-    max-width: 1400px !important;
+    max-width: calc(100vw * (1400 / 1700)) !important;
     margin: 0 auto;
     height: 100%;
-    // padding-top: calc(100vw * (50 / 1920));
+    // padding-top: calc(100vw * (50 / 1700));
   }
 
   .gnb {
@@ -28,20 +28,20 @@ header {
     align-items: center;
 
     .nav {
-      padding-top: calc(100vw * (55 / 1920));
+      padding-top: calc(100vw * (55 / 1700));
       display: flex;
     }
 
     .project,
     .intro {
-      margin-left: calc(100vw * (60 / 1920));
-      padding: calc(100vw * (4 / 1920)) calc(100vw * (20 / 1920));
-      font-size: calc(100vw * (22 / 1920));
+      margin-left: calc(100vw * (60 / 1700));
+      padding: calc(100vw * (4 / 1700)) calc(100vw * (20 / 1700));
+      font-size: calc(100vw * (18 / 1700));
       font-weight: 600;
 
       cursor: pointer;
       overflow: hidden;
-      border-radius: calc(100vw * (50 / 1920));
+      border-radius: calc(100vw * (50 / 1700));
 
       /* 배경색과 텍스트 색상이 부드럽게 전환 */
       transition: background-color 0.3s ease, color 0.3s ease;
@@ -89,27 +89,27 @@ header {
 .socialNav {
   position: fixed;
   z-index: 99999;
-  right: calc(100vw * (70 / 1920));
-  bottom: calc(100vw * (70 / 1920));
+  right: calc(100vw * (70 / 1700));
+  bottom: calc(100vw * (70 / 1700));
   ul {
     li {
       display: flex;
       align-items: center;
       width: 100%;
       height: 100%;
-      margin-top: calc(100vw * (20 / 1920));
+      margin-top: calc(100vw * (20 / 1700));
       justify-content: end;
 
       .linkTitle {
-        margin-right: calc(100vw * (10 / 1920));
+        margin-right: calc(100vw * (10 / 1700));
         text-align: right;
         font-weight: 600;
         color: var(--color-bk);
         display: none;
         transition: opacity 0.3s ease;
         height: 100%;
-        padding: calc(100vw * (5 / 1920)) calc(100vw * (10 / 1920));
-        border-radius: calc(100vw * (50 / 1920));
+        padding: calc(100vw * (5 / 1700)) calc(100vw * (10 / 1700));
+        border-radius: calc(100vw * (50 / 1700));
         background-color: rgba($color: #ffffff, $alpha: 0.8);
       }
 
@@ -118,10 +118,10 @@ header {
       }
 
       a {
-        width: calc(100vw * (80 / 1920));
-        height: calc(100vw * (80 / 1920));
+        width: calc(100vw * (80 / 1700));
+        height: calc(100vw * (80 / 1700));
 
-        border-radius: calc(100vw * (50 / 1920));
+        border-radius: calc(100vw * (50 / 1700));
         background-color: #fff;
         box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.2);
         cursor: pointer;
@@ -132,20 +132,20 @@ header {
       }
 
       .img {
-        width: calc(100vw * (48 / 1920));
+        width: calc(100vw * (48 / 1700));
 
         display: flex;
         justify-content: center;
         align-items: center;
 
         &.home {
-          width: calc(100vw * (40 / 1920));
+          width: calc(100vw * (40 / 1700));
         }
         &.siteIcon {
-          width: calc(100vw * (38 / 1920));
+          width: calc(100vw * (38 / 1700));
         }
         &.pptIcon {
-          width: calc(100vw * (38 / 1920));
+          width: calc(100vw * (38 / 1700));
         }
       }
     }

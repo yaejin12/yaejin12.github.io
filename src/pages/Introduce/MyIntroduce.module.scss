@@ -6,43 +6,45 @@
   justify-content: space-between;
   color: #fff;
 
-  padding-top: calc(100vw * (150 / 1920));
+  padding-top: calc(100vw * (150 / 1700));
 
   // 위로 떠오르는 애니메이션
   animation: upAni 1.2s ease-out forwards;
 
   // 대제목
   .profileWrapper {
-    width: calc(100vw * (1000 / 1920));
-    padding-left: calc(100vw * (80 / 1920));
+    width: calc(100vw * (1000 / 1700));
+    padding-right: calc(100vw * (120 / 1700));
 
     .myImg {
-      width: calc(100vw * (450 / 1920));
+      width: calc(100vw * (300 / 1700));
+      img {
+        width: 100%;
+      }
     }
 
     .name {
-      margin-top: calc(100vw * (60 / 1920));
-      margin-left: calc(100vw * (50 / 1920));
-      font-size: calc(100vw * (23 / 1920));
+      margin-top: calc(100vw * (60 / 1700));
+      margin-left: calc(100vw * (50 / 1700));
+      font-size: calc(100vw * (23 / 1700));
       span {
-        font-size: calc(100vw * (16 / 1920));
-        margin-left: calc(100vw * (10 / 1920));
+        font-size: calc(100vw * (16 / 1700));
+        margin-left: calc(100vw * (10 / 1700));
       }
     }
     .profileInfo {
-      margin-left: calc(100vw * (50 / 1920));
-      margin-top: calc(100vw * (20 / 1920));
-      font-size: calc(100vw * (16 / 1920));
+      margin-left: calc(100vw * (50 / 1700));
+      margin-top: calc(100vw * (20 / 1700));
+      font-size: calc(100vw * (16 / 1700));
       color: #efefef;
       line-height: 220%;
 
       span {
-        font-size: calc(100vw * (14 / 1920));
+        font-size: calc(100vw * (14 / 1700));
       }
 
       .spanBold {
-        font-size: calc(100vw * (15 / 1920));
-        margin-left: calc(100vw * (7 / 1920));
+        font-size: calc(100vw * (15 / 1700));
         font-weight: 600;
       }
     }
@@ -53,22 +55,22 @@
     width: 100%;
 
     .box {
-      padding: calc(100vw * (30 / 1920)) 0 calc(100vw * (50 / 1920));
+      padding: calc(100vw * (25 / 1700)) 0 calc(100vw * (50 / 1700));
 
       position: relative;
 
       .line {
         position: absolute;
-        width: calc(100vw * (3900 / 1920));
-        height: calc(100vw * (0.5 / 1920));
-        top: calc(100vw * (-1 / 1920));
-        left: calc(100vw * (-10 / 1920));
+        width: calc(100vw * (3900 / 1700));
+        height: calc(100vw * (0.5 / 1700));
+        top: calc(100vw * (-1 / 1700));
+        left: calc(100vw * (-10 / 1700));
         background-color: var(--color-gr);
       }
 
       .infoTitle {
-        font-size: calc(100vw * (30 / 1920));
-        margin-bottom: calc(100vw * (25 / 1920));
+        font-size: calc(100vw * (30 / 1700));
+        margin-bottom: calc(100vw * (25 / 1700));
         font-weight: 600;
         line-height: 180%;
         color: var(--color-gr);
@@ -78,31 +80,31 @@
         display: flex;
 
         .detailInfo {
-          margin-right: 100px;
+          margin-right: calc(100vw * (100 / 1700));
           width: 100%;
 
           .detailInfoTitle {
-            font-size: calc(100vw * (20 / 1920));
+            font-size: calc(100vw * (20 / 1700));
             font-weight: 600;
-            margin-bottom: calc(100vw * (10 / 1920));
+            margin-bottom: calc(100vw * (10 / 1700));
           }
 
           .detailInfoText {
             line-height: 190%;
             font-weight: 400;
-            font-size: calc(100vw * (15 / 1920));
+            font-size: calc(100vw * (15 / 1700));
             font-weight: 400;
           }
 
           .skill {
             display: flex;
             align-items: center;
-            margin-bottom: calc(100vw * (15 / 1920));
+            margin-bottom: calc(100vw * (15 / 1700));
 
             .skillTitle {
-              width: calc(100vw * (150 / 1920));
+              width: calc(100vw * (150 / 1700));
               font-weight: 600;
-              font-size: calc(100vw * (16 / 1920));
+              font-size: calc(100vw * (16 / 1700));
             }
           }
         }

@@ -16,7 +16,7 @@
   .inner {
     width: 100%;
     height: 100%;
-    max-width: calc(100vw * (1400 / 1920));
+    max-width: calc(100vw * (1400 / 1700));
     min-height: 100vh;
     margin: 0 auto;
   }
@@ -39,17 +39,17 @@
   animation: chatAni 1.2s ease-out forwards;
 
   .title {
-    font-size: calc(100vw * (85 / 1920));
+    font-size: calc(100vw * (85 / 1700));
     font-weight: 600;
     line-height: 140%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: calc(100vw * (20 / 1920));
+    padding-bottom: calc(100vw * (20 / 1700));
 
     .line {
       background-color: var(--color-bk);
-      height: calc(100vw * (3 / 1920));
+      height: calc(100vw * (1 / 1700));
       width: 0;
       transform-origin: left; /* 왼쪽에서 확장 시작 */
       animation: expandLine 0.9s ease forwards;
@@ -61,10 +61,10 @@
 .infoWrapper {
   display: flex;
   align-items: end;
-  padding-bottom: calc(100vw * (70 / 1920));
+  padding-bottom: calc(100vw * (70 / 1700));
 
   .infoText {
-    font-size: calc(100vw * (22 / 1920));
+    font-size: calc(100vw * (22 / 1700));
     font-weight: 500;
     line-height: 180%;
   }
@@ -76,7 +76,7 @@
     width: 0;
   }
   100% {
-    width: calc(100vw * (400 / 1920));
+    width: calc(100vw * (400 / 1700));
   }
 }
 
@@ -102,7 +102,7 @@
 //       width: 0;
 //     }
 //     100% {
-//       width: calc(100vw * (150 / 1920));
+//       width: calc(100vw * (150 / 1700));
 //     }
 //   }
 // }

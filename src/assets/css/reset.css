@@ -76,7 +76,7 @@ body {
   width: auto;
   height: 100%;
   font-family: "PyeongChang", sans-serif;
-  font-size: calc(100vw * (10 / 1920));
+  font-size: calc(100vw * (10 / 1700));
   color: var(--color-bk);
 }
 
