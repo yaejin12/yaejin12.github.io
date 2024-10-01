@@ -4,18 +4,15 @@ import ProjectListHeader from "./ProjectListHeader";
 import ProjectListBtn from "./ProjectListBtn";
 
 function ProjectList({ styles, project }) {
-  const { url } = project;
+  const { url, id } = project;
   const location = useLocation();
-  console.log("location", location);
 
   // 링크 정보와 이름을 매핑
   const links = [
-    { name: "상세보기", link: `/${url.page}` },
+    { name: "상세보기", link: `${location.pathname}/${id}` },
     { name: "사이트", link: url.site },
     { name: "GitHub", link: url.github },
   ];
-
-  console.log("links", links);
 
   return (
     <>

@@ -11,11 +11,7 @@ function MenuNav({ styles }) {
     if (isIntroduce) {
       return styles.isIntroduce;
     }
-    if (
-      isProject ||
-      location.pathname.includes("/3on3") ||
-      location.pathname.includes("/5jo")
-    ) {
+    if (isProject || location.pathname.includes("/project")) {
       return styles.isProject;
     } else {
       return "";

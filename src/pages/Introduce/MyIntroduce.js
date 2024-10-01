@@ -19,8 +19,6 @@ function MyIntroduce({ Rendering }) {
           1996. 12. 5 <span>(만 27세)</span> <br />
           <span className={styles.spanBold}>Tel.</span> 010 5667 8759 <br />
           <span className={styles.spanBold}> Email.</span> pos03167@naver.com
-          <br />
-          <span className={styles.spanBold}> Hobby.</span> 클라이밍, 등산
         </li>
       </ul>
       {/* 상세 정보 */}

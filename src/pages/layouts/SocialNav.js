@@ -10,30 +10,25 @@ import pptIcon from "../../assets/images/icons/pptIcon.svg";
 
 function SocialNav({ styles }) {
   const location = useLocation();
-
+  const { id } = useParams();
   const [project, setProject] = useState({});
   const { url = {} } = project;
-  const is3on3Page = location.pathname.startsWith(`/3on3`);
-  const is5joPage = location.pathname.startsWith(`/5jo`);
-
-  const isPage = is3on3Page || is5joPage;
+  const isDetailPage = location.pathname.startsWith(`/project/${id}`);
   const projectDummy = useSelector((state) => state.project.dummy);
 
   useEffect(() => {
-    if (is3on3Page) {
-      setProject(projectDummy[0]);
-    } else if (is5joPage) {
-      setProject(projectDummy[1]);
-      console.log("project!", project);
+    if (isDetailPage) {
+      setProject(projectDummy.find((project) => project.id === parseInt(id)));
+
     } else {
       setProject({});
     }
-  }, [is3on3Page, is5joPage, projectDummy]);
+  }, [isDetailPage, id, projectDummy]);
 
   return (
     <nav className={styles.socialNav}>
       <ul>
-        {isPage && (
+        {isDetailPage && (
           <div className={styles.upAni}>
             {url.site && (
               <SocialNavLink
@@ -69,7 +64,7 @@ function SocialNav({ styles }) {
           link={url.github ? url.github : "https://github.com/yaejin12"}
           imgSrc={githubLogo}
           type={"outLink"}
-          linkType={is3on3Page || is5joPage ? "Project GitHub" : "My GitHub"}
+          linkType={isDetailPage ? "ProjectGitHub" : "My GitHub"}
         />
         <SocialNavLink
           styles={styles}
