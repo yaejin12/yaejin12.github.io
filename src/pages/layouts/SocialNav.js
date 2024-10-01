@@ -15,16 +15,18 @@ function SocialNav({ styles }) {
   const { url = {} } = project;
   const is3on3Page = location.pathname.startsWith(`/3on3`);
   const is5joPage = location.pathname.startsWith(`/5jo`);
+
   const isPage = is3on3Page || is5joPage;
   const projectDummy = useSelector((state) => state.project.dummy);
 
   useEffect(() => {
     if (is3on3Page) {
       setProject(projectDummy[0]);
-    }
-    if (is5joPage) {
+    } else if (is5joPage) {
       setProject(projectDummy[1]);
       console.log("project!", project);
+    } else {
+      setProject({});
     }
   }, [is3on3Page, is5joPage, projectDummy]);
 
