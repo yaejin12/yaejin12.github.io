@@ -1,177 +1,509 @@
 header {
-  // background-color: aqua;
   width: 100%;
-  height: calc(100vw * (80 / 1700));
-  position: absolute;
+  height: 80px;
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: 999999;
+  z-index: 99999;
+  // background-color: rgba(255, 255, 255, 0.01);
+  // backdrop-filter: blur(5px);
 }
 
-// 상단 gnb 네비
-.menu {
-  // width: 100%;
-  // height: 100%;
+.headerWrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: end;
+  align-items: center;
+  // inner
+  padding: 0 100px 0 100px;
 
-  .inner {
-    // width: 100%;
-    max-width: calc(100vw * (1400 / 1700)) !important;
-    margin: 0 auto;
-    height: 100%;
-    // padding-top: calc(100vw * (50 / 1700));
+  // 로고
+  .logo {
+    width: 0px;
+    object-fit: contain;
+    background-repeat: no-repeat;
   }
+
+  // 메뉴
+  .menuWrapper {
+    width: 80px;
+    height: 100%;
+    position: relative;
+
+    cursor: pointer;
+
+    //햄버거
+    .menuLine {
+      position: absolute;
+      right: 0;
+      width: 40px;
+      height: 2px;
+      border-radius: 30px;
+      background-color: var(--color-bk);
+
+      transition: 0.3s;
+      &:nth-child(1) {
+        top: calc(100% - 25px);
+      }
+      &:nth-child(2) {
+        bottom: 50%;
+      }
+    }
+
+    &.close {
+      .menuLine {
+        margin-bottom: 0;
+        &:nth-child(1) {
+          top: 50%;
+          transform: translateY(-50%) rotate(45deg);
+        }
+        &:nth-child(2) {
+          bottom: 50%;
+          transform: translateY(50%) rotate(-45deg);
+        }
+      }
+    }
+  }
+}
+
+// =======================
+// 메뉴화면
+// =======================
+.menuClickWrapper {
+  &.open {
+    transform: translateX(0);
+  }
+  background-color: #333; /* 배경색 */
+  transform: translateY(-100%); /* 메뉴가 닫혔을 때는 화면 밖으로 */
+  transition: transform 0.3s ease;
+
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 999;
+  background-color: rgba($color: #171717, $alpha: 0.96);
 
   .gnb {
+    width: 100%;
     height: 100%;
+    padding-bottom: 80px;
+
     display: flex;
-    justify-content: end;
+    justify-content: center;
     align-items: center;
 
-    .nav {
-      padding-top: calc(100vw * (55 / 1700));
-      display: flex;
-    }
+    flex-direction: column;
+    backdrop-filter: blur(10px);
 
-    .project,
-    .intro {
-      margin-left: calc(100vw * (60 / 1700));
-      padding: calc(100vw * (4 / 1700)) calc(100vw * (20 / 1700));
-      font-size: calc(100vw * (18 / 1700));
-      font-weight: 600;
+    p {
+      font-size: var(--font-size-title);
+      font-weight: 700;
+      margin-bottom: 50px;
+      color: var(--color-wh);
+      position: relative;
 
-      cursor: pointer;
-      overflow: hidden;
-      border-radius: calc(100vw * (50 / 1700));
-
-      /* 배경색과 텍스트 색상이 부드럽게 전환 */
-      transition: background-color 0.3s ease, color 0.3s ease;
-
+      // 메뉴 hover 효과
       &:hover {
-        background-color: var(--color-bk);
-        color: #fff;
-      }
-    }
-
-    // Project일때
-    &.isProject {
-      .nav {
-        .project {
-          background-color: var(--color-bk);
-          color: #fff;
-          transition: none;
+        color: var(--color-point);
+        &::after {
+          content: "";
+          position: absolute;
+          width: 35px;
+          height: 35px;
+          margin-left: 30px;
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-image: url(../../assets//images/icons/flower_icon.svg);
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: 9999;
+          animation: rotate 8s linear infinite;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          width: 35px;
+          height: 35px;
+          margin-right: 30px;
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-image: url(../../assets//images/icons/flower_icon.svg);
+          top: 50%;
+          // transform: translateY(50%);
+          left: -65px;
+          z-index: 9999;
+          animation: rotate 8s linear infinite;
         }
       }
     }
+  }
+}
 
-    // Introduce일때
-    &.isIntroduce {
-      .nav {
-        .project {
-          color: #fff;
+// ==================
+// footer
+// ==================
+footer {
+  background-color: var(--color-gr);
+  color: var(--color-wh);
+  width: 100%;
 
-          &:hover {
-            background-color: #fff;
-            color: var(--color-bk);
+  .footerWrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 25px 100px 25px 100px;
+
+    .footerInfo {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      font-weight: 400;
+      width: 100%;
+      justify-content: space-between;
+
+      p {
+        font-size: var(--font-size-footer);
+        margin: 5px 200px 5px 0;
+        &:nth-child(3) {
+          margin-right: 0;
+        }
+
+        span {
+          font-weight: 800;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
+
+/* @keyframes 애니메이션 정의 */
+@keyframes rotate {
+  from {
+    transform: translateY(-50%) rotate(0deg); /* 시작 시 0도 */
+  }
+  to {
+    transform: translateY(-50%) rotate(360deg); /* 끝날 때 360도 회전 */
+  }
+}
+
+// ===============
+// 반응형
+// ===============
+
+@media screen and (max-width: 1550px) {
+  // =========================
+  // 반응형 1550px header
+  header {
+    height: 80px;
+  }
+
+  .headerWrapper {
+    // inner
+    padding: 0 50px 0 50px;
+
+    // 메뉴
+    .menuWrapper {
+      //햄버거
+      .menuLine {
+        height: 2px;
+        border-radius: 30px;
+        background-color: var(--color-bk);
+
+        transition: 0.3s;
+        &:nth-child(1) {
+          top: calc(100% - 25px);
+        }
+        &:nth-child(2) {
+          bottom: 50%;
+        }
+      }
+    }
+  }
+
+  // =======================
+  // 반응형 1550px 메뉴화면
+
+  .menuClickWrapper {
+    .gnb {
+      padding-bottom: 0;
+
+      p {
+        margin-bottom: 35px;
+
+        // 메뉴 hover 효과
+        &:hover {
+          &::after {
+            width: 25px;
+            height: 25px;
+            margin-left: 25px;
+          }
+          &::before {
+            content: "";
+            width: 25px;
+            height: 25px;
+            margin-left: 25px;
+            left: -70px;
           }
         }
+      }
+    }
+  }
 
-        .intro {
-          background-color: #fff;
-          color: var(--color-bk);
-          transition: none;
+  // =======================
+  // 반응형 1550px footer
+
+  footer {
+    .footerWrapper {
+      padding: 25px 50px;
+    }
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  // =========================
+  // 반응형 1080px header
+
+  .headerWrapper {
+    // inner
+    padding: 0 50px 0 50px;
+  }
+
+  // =======================
+  // 반응형 1080px 메뉴화면
+
+  .menuClickWrapper {
+    .gnb {
+      padding-bottom: 0;
+
+      p {
+        margin-bottom: 30px;
+
+        // 메뉴 hover 효과
+        &:hover {
+          &::after {
+            width: 22px;
+            height: 22px;
+            margin-left: 20px;
+          }
+          &::before {
+            content: "";
+            width: 22px;
+            height: 22px;
+            margin-left: 20px;
+            left: -57px;
+          }
+        }
+      }
+    }
+  }
+
+  // ==================
+  // 반응형 1080px footer
+
+  footer {
+    .footerWrapper {
+      padding: 25px 50px;
+
+      .footerInfo {
+        flex-direction: column;
+        align-items: start;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  // =========================
+  // 반응형 768px header
+
+  header {
+    height: 50px;
+  }
+  .headerWrapper {
+    // inner
+    padding: 0 30px 0 30px;
+
+    // 메뉴
+    .menuWrapper {
+      width: 25px;
+
+      //햄버거
+      .menuLine {
+        width: 25px;
+        height: 2px;
+
+        &:nth-child(1) {
+          top: calc(100% - 15px);
+        }
+        &:nth-child(2) {
+          bottom: 50%;
+        }
+      }
+    }
+  }
+  // =======================
+  // 반응형 768px 메뉴화면
+
+  .menuClickWrapper {
+    .gnb {
+      p {
+        margin-bottom: 30px;
+
+        // 메뉴 hover 효과
+        &:hover {
+          &::after {
+            width: 18px;
+            height: 18px;
+            margin-left: 18px;
+          }
+          &::before {
+            content: "";
+            width: 18px;
+            height: 18px;
+            margin-left: 18px;
+            left: -55px;
+          }
+        }
+      }
+    }
+  }
+
+  // ==================
+  // 반응형 768px footer
+
+  footer {
+    .footerWrapper {
+      padding: 20px 30px;
+      .footerInfo {
+        flex-direction: column;
+        align-items: start;
+        p {
+          margin: 4px 10px 4px 0;
+          span {
+            margin-right: 4px;
+          }
         }
       }
     }
   }
 }
 
-// 하단 소셜 네비
-.socialNav {
-  position: fixed;
-  z-index: 99999;
-  right: calc(100vw * (70 / 1700));
-  bottom: calc(100vw * (70 / 1700));
-  ul {
-    li {
-      display: flex;
-      align-items: center;
-      width: 100%;
-      height: 100%;
-      margin-top: calc(100vw * (20 / 1700));
-      justify-content: end;
+@media screen and (max-width: 500px) {
+  // =========================
+  // 반응형 500px header
+  // =========================
 
-      .linkTitle {
-        margin-right: calc(100vw * (10 / 1700));
-        text-align: right;
-        font-weight: 600;
-        color: var(--color-bk);
-        display: none;
-        transition: opacity 0.3s ease;
-        height: 100%;
-        padding: calc(100vw * (5 / 1700)) calc(100vw * (10 / 1700));
-        border-radius: calc(100vw * (50 / 1700));
-        background-color: rgba($color: #ffffff, $alpha: 0.8);
+  .headerWrapper {
+    // inner
+    padding: 0 15px 0 15px;
+
+    // 메뉴
+    .menuWrapper {
+      width: 25px;
+
+      //햄버거
+      .menuLine {
+        width: 25px;
+        height: 2px;
       }
+    }
+  }
+  // =======================
+  // 반응형 500px 메뉴화면
 
-      &:hover .linkTitle {
-        display: block;
-      }
+  .menuClickWrapper {
+    .gnb {
+      p {
+        margin-bottom: 20px;
 
-      a {
-        width: calc(100vw * (80 / 1700));
-        height: calc(100vw * (80 / 1700));
-
-        border-radius: calc(100vw * (50 / 1700));
-        background-color: #fff;
-        box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.2);
-        cursor: pointer;
-
-        display: flex;
-        justify-content: center;
-        text-align: center;
-      }
-
-      .img {
-        width: calc(100vw * (48 / 1700));
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        &.home {
-          width: calc(100vw * (40 / 1700));
-        }
-        &.siteIcon {
-          width: calc(100vw * (38 / 1700));
-        }
-        &.pptIcon {
-          width: calc(100vw * (38 / 1700));
+        // 메뉴 hover 효과
+        &:hover {
+          &::after {
+            width: 15px;
+            height: 15px;
+            margin-left: 8px;
+          }
+          &::before {
+            content: "";
+            width: 15px;
+            height: 15px;
+            margin-left: 8px;
+            left: -32px;
+          }
         }
       }
     }
   }
-}
+  // ==================
+  // 반응형 500px footer
 
-.upAni {
-  animation: upAni 1.2s ease-out forwards;
-}
-
-@keyframes back {
-  0% {
-    transform: translateX(20px);
-  }
-  100% {
-    transform: 0;
+  footer {
+    height: 100%;
+    .footerWrapper {
+      padding: 10px 15px;
+    }
   }
 }
 
-@keyframes upAni {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
+@media screen and (max-width: 320px) {
+  // =========================
+  // 반응형 320px header
+  // =========================
+
+  .headerWrapper {
+    // inner
+    padding: 0 8px 0 8px;
+
+    // 메뉴
+    .menuWrapper {
+      width: 25px;
+
+      //햄버거
+      .menuLine {
+        width: 25px;
+        height: 2px;
+      }
+    }
   }
-  100% {
-    opacity: 1;
-    transform: 0;
+  // =======================
+  // 반응형 320px 메뉴화면
+
+  .menuClickWrapper {
+    .gnb {
+      p {
+        margin-bottom: 15px;
+
+        // 메뉴 hover 효과
+        &:hover {
+          &::after {
+            width: 13px;
+            height: 13px;
+            margin-left: 8px;
+          }
+          &::before {
+            content: "";
+            width: 13px;
+            height: 13px;
+            margin-left: 8px;
+            left: -27px;
+          }
+        }
+      }
+    }
+  }
+  // ==================
+  // 반응형 320px footer
+
+  footer {
+    // height: 70px;
+    .footerWrapper {
+      padding: 8px;
+    }
   }
 }

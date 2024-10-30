@@ -1,85 +1,126 @@
-@font-face {
-  font-family: "NEXON Lv1 Gothic OTF";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-// Main title css
-.wrapper {
-  height: 100vh;
+.mainBannerInner {
   width: 100%;
+  height: 100vh;
   position: relative;
-  z-index: 999;
-
-  .inner {
-    width: 100%;
-    height: 100%;
-    max-width: calc(100vw * (1400 / 1700));
-    min-height: 100vh;
-    margin: 0 auto;
-  }
-}
-
-.mainWrapper {
-  height: 100%;
+  padding: 100px 0 100px 100px;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.titleWrapper {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  height: 100%;
+  align-items: center;
+}
 
-  // 위로 떠오르는 애니메이션
-  animation: chatAni 1.2s ease-out forwards;
+// ==========
+// Main title 부분
+// ==========
+.mainBannerWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  letter-spacing: -4px;
 
-  .title {
-    font-size: calc(100vw * (85 / 1700));
-    font-weight: 600;
-    line-height: 140%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: calc(100vw * (20 / 1700));
+  .text {
+    font-size: clamp(50px, 10.9vw, 220px);
+    line-height: 110%;
+    font-weight: 800;
+    color: var(--color-bk);
 
-    .line {
-      background-color: var(--color-bk);
-      height: calc(100vw * (1 / 1700));
-      width: 0;
-      transform-origin: left; /* 왼쪽에서 확장 시작 */
-      animation: expandLine 0.9s ease forwards;
+    &:nth-child(1) {
+      display: flex;
+
+      // lee
+      p:nth-child(1) {
+        margin-right: clamp(16px, 2.08vw, 40px); /* 40px 목표 */
+      }
+      // yae
+      p:nth-child(2) {
+        font-style: italic;
+        // font-weight: 400;
+        margin-right: clamp(16px, 3.125vw, 60px); /* 60px 목표 */
+      }
+    }
+
+    // Frontend
+    &:nth-child(2) {
+      margin-left: clamp(16px, 11.98vw, 230px);
+      color: var(--color-point);
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    // Portfolio
+    &:nth-child(3) {
+      font-style: italic;
+      font-weight: 800;
+    }
+  }
+  // ==========
+  // git
+  // ==========
+  .git {
+    height: 100%;
+    margin: 100px 0 0 0;
+    font-weight: 900;
+
+    a {
+      display: flex;
+      line-height: 100%;
+
+      &:hover {
+        img {
+          animation: gitAni 1s ease-in-out infinite;
+        }
+      }
+
+      p {
+        display: flex;
+        font-size: 26px;
+        align-items: end;
+        color: var(--color-bk);
+      }
+
+      // 아이콘 화살표 이미지
+      img {
+        margin-left: 20px;
+        width: 30px;
+        object-fit: contain;
+        background-repeat: no-repeat;
+      }
     }
   }
 }
 
-// Main info css
-.infoWrapper {
-  display: flex;
-  align-items: end;
-  padding-bottom: calc(100vw * (70 / 1700));
+// ==========
+// 캐릭터
+// ==========
+.charaterImages {
+  width: clamp(170px, 34.9vw, 670px);
+  position: absolute;
+  bottom: 0;
+  right: 0;
 
-  .infoText {
-    font-size: calc(100vw * (22 / 1700));
-    font-weight: 500;
-    line-height: 180%;
+  height: auto;
+  z-index: 33;
+
+  // 라인 캐릭터 이미지
+  img {
+    object-fit: contain;
+
+    // 배경색 있는 캐릭터 이미지
+    &:nth-child(2) {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+    &.isView {
+      opacity: 1;
+    }
   }
 }
 
-/* 애니메이션 정의 */
-@keyframes expandLine {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: calc(100vw * (400 / 1700));
-  }
-}
-
+// ==========
+// 애니
+// ==========
 @keyframes chatAni {
   0% {
     opacity: 0;
@@ -90,19 +131,168 @@
     transform: 0;
   }
 }
+@keyframes gitAni {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(8px, -8px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
 
-// @media screen and (max-width: 1125px) {
-//   .title {
-//     font-size: 40px;
-//     line-height: 120%;
-//   }
-//   // /* 애니메이션 정의 */
-//   @keyframes expandLine {
-//     0% {
-//       width: 0;
-//     }
-//     100% {
-//       width: calc(100vw * (150 / 1700));
-//     }
-//   }
-// }
+//==============================
+// 반응형
+//==============================
+@media screen and (max-width: 1550px) {
+  .mainBannerInner {
+    padding: 50px 0 50px 50px;
+  }
+
+  // Main title 부분
+  .mainBannerWrapper {
+    letter-spacing: -4px;
+
+    // git
+    .git {
+      a {
+        p {
+          font-size: 20px;
+        }
+
+        // 아이콘 화살표 이미지
+        img {
+          width: 28px;
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .mainBannerInner {
+    padding: 50px 0 50px 50px;
+  }
+
+  // Main title 부분
+  .mainBannerWrapper {
+    // git
+    .git {
+      a {
+        p {
+          font-size: 18px;
+        }
+
+        // 아이콘 화살표 이미지
+        img {
+          width: 22px;
+          margin-left: 18px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .mainBannerInner {
+    padding: 30px 0 30px 30px;
+  }
+
+  // Main title 부분
+  .mainBannerWrapper {
+    .text {
+      letter-spacing: -2px;
+
+      // Frontend
+      &:nth-child(2) {
+        margin-left: clamp(16px, 11.98vw, 230px);
+      }
+
+      // Portfolio
+      &:nth-child(3) {
+      }
+    }
+
+    // git
+    .git {
+      a {
+        p {
+          font-size: 15px;
+        }
+
+        // 아이콘 화살표 이미지
+        img {
+          width: 18px;
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .mainBannerInner {
+    padding: 15px 0 15px 15px;
+  }
+
+  // Main title 부분
+  .mainBannerWrapper {
+    .text {
+      line-height: 120%;
+
+      // Frontend
+      &:nth-child(2) {
+        margin-left: 50px;
+      }
+    }
+
+    // git
+    .git {
+      a {
+        p {
+          font-size: 14px;
+        }
+
+        // 아이콘 화살표 이미지
+        img {
+          width: 15px;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .mainBannerInner {
+    padding: 8px 0 8px 8px;
+  }
+
+  // Main title 부분
+  .mainBannerWrapper {
+    .text {
+      // Frontend
+      &:nth-child(2) {
+        margin-left: 0px;
+      }
+    }
+
+    // git
+    .git {
+      a {
+        p {
+          font-size: 14px;
+        }
+
+        // 아이콘 화살표 이미지
+        img {
+          width: 15px;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}

@@ -1,26 +1,40 @@
-import React, { useRef } from "react";
-import GradationBg from "../../components/common/gradationBg/GradationBg";
-import styles from "./DetailProject.module.scss";
-import DetailHeader from "./DetailHeader";
-import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import DetailTop from "./components/DetailTop";
+import stylesTop from "./DetailProject.module.scss";
+import MyContribution from "./components/MyContribution";
+import DetailStyles from "./DetailProject.module.scss";
+import DetailSkills from "./components/DetailSkills";
+import { useInView } from "react-intersection-observer";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleBlackRef } from "../../store/Toggle-slice";
+import { useLocation } from "react-router-dom";
 function DetailProject() {
-  const paramsId = useParams();
+  const isRef = useSelector((state) => state.isBlackRef.isBlackRef);
+  const [isViewRef, inView] = useInView({
+    threshold: 0.6,
+  });
 
-  const projectDummy = useSelector((action) => action.project.dummy);
+  const dispatch = useDispatch();
+  const location = useLocation();
 
-  const project = projectDummy.find(
-    (project) => project.id === parseInt(paramsId.id)
-  );
+  useEffect(() => {
+    if (location.pathname === "/1" || location.pathname === "/2") {
+      dispatch(toggleBlackRef(true));
+
+      if (inView) {
+        dispatch(toggleBlackRef(!inView));
+      }
+    }
+  }, [inView, location, isRef]);
 
   return (
-    // <GradationBg>
-    <div className={styles.detailProjectWrapper}>
-      <div className={styles.inner}>
-        <DetailHeader project={project} />
+    <>
+      <DetailTop styles={stylesTop} />
+      <DetailSkills styles={DetailStyles} />
+      <div ref={isViewRef}>
+        <MyContribution styles={DetailStyles} />
       </div>
-    </div>
-    // </GradationBg>
+    </>
   );
 }
 

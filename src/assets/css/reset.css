@@ -75,9 +75,12 @@ html,
 body {
   width: auto;
   height: 100%;
-  font-family: "PyeongChang", sans-serif;
-  font-size: calc(100vw * (10 / 1700));
-  color: var(--color-bk);
+  /* font-family: "Noto Sans KR", sans-serif; */
+  font-family: "SUITE", sans-serif;
+  font-weight: 500;
+  /* font-size: 16px; */
+  color: var(--color-bk-text);
+  background-color: var(--color-wh);
 }
 
 header,
@@ -211,6 +214,10 @@ textarea:focus {
   outline: none;
 }
 
+.body-lock {
+  overflow: hidden;
+}
+
 /* select*/
 select {
   border-radius: 0;
@@ -229,100 +236,143 @@ select::-ms-expand {
 }
 
 /* 공통 컨텐츠 font */
-/* Pretendard - 한글적용 */
+
+/* noto-sans-kr-100 - latin */
 @font-face {
-  font-family: "Pretendard";
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans KR";
   font-style: normal;
-  src: url("../fonts/pretendard/Pretendard-Thin.woff") format("woff");
   font-weight: 100;
+  src: url("../fonts/noto-sans-kr-v36-latin/noto-sans-kr-v36-latin-100.woff2")
+    format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-
+/* noto-sans-kr-200 - latin */
 @font-face {
-  font-family: "Pretendard";
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans KR";
   font-style: normal;
-  src: url("../fonts/pretendard/Pretendard-ExtraLight.woff") format("woff");
   font-weight: 200;
+  src: url("../fonts/noto-sans-kr-v36-latin/noto-sans-kr-v36-latin-200.woff2")
+    format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-
+/* noto-sans-kr-300 - latin */
 @font-face {
-  font-family: "Pretendard";
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans KR";
   font-style: normal;
-  src: url("../fonts/pretendard/Pretendard-Light.woff") format("woff");
   font-weight: 300;
+  src: url("../fonts/noto-sans-kr-v36-latin/noto-sans-kr-v36-latin-300.woff2")
+    format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-
+/* noto-sans-kr-regular - latin */
 @font-face {
-  font-family: "Pretendard";
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans KR";
   font-style: normal;
-  src: url("../fonts/pretendard/Pretendard-Regular.woff") format("woff");
   font-weight: 400;
+  src: url("../fonts/noto-sans-kr-v36-latin/noto-sans-kr-v36-latin-regular.woff2")
+    format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-
+/* noto-sans-kr-500 - latin */
 @font-face {
-  font-family: "Pretendard";
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans KR";
   font-style: normal;
-  src: url("../fonts/pretendard/Pretendard-Medium.woff") format("woff");
   font-weight: 500;
+  src: url("../fonts/noto-sans-kr-v36-latin/noto-sans-kr-v36-latin-500.woff2")
+    format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-
+/* noto-sans-kr-600 - latin */
 @font-face {
-  font-family: "Pretendard";
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans KR";
   font-style: normal;
-  src: url("../fonts/pretendard/Pretendard-SemiBold.woff") format("woff");
   font-weight: 600;
+  src: url("../fonts/noto-sans-kr-v36-latin/noto-sans-kr-v36-latin-600.woff2")
+    format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-
+/* noto-sans-kr-700 - latin */
 @font-face {
-  font-family: "Pretendard";
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans KR";
   font-style: normal;
-  src: url("../fonts/pretendard/Pretendard-Bold.woff") format("woff");
   font-weight: 700;
+  src: url("../fonts/noto-sans-kr-v36-latin/noto-sans-kr-v36-latin-700.woff2")
+    format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-
+/* noto-sans-kr-800 - latin */
 @font-face {
-  font-family: "Pretendard";
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans KR";
   font-style: normal;
-  src: url("../fonts/pretendard/Pretendard-ExtraLight.woff") format("woff");
   font-weight: 800;
+  src: url("../fonts/noto-sans-kr-v36-latin/noto-sans-kr-v36-latin-800.woff2")
+    format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-
-/* ========= */
-
+/* noto-sans-kr-900 - latin */
 @font-face {
-  font-family: "NEXON Lv1 Gothic OTF";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff")
-    format("woff");
-  font-weight: normal;
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans KR";
   font-style: normal;
+  font-weight: 900;
+  src: url("../fonts/noto-sans-kr-v36-latin/noto-sans-kr-v36-latin-900.woff2")
+    format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* 영문 */
+
+@font-face {
+  font-display: swap;
+  font-family: "SUITE";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/SUITE-woff2/SUITE-Light.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: "PyeongChang";
+  font-display: swap;
+  font-family: "SUITE";
+  font-style: normal;
   font-weight: 400;
-  font-style: normal;
-  src: url("https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChang-Regular.eot");
-  src: url("https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChang-Regular.eot?#iefix")
-      format("embedded-opentype"),
-    url("https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChang-Regular.woff2")
-      format("woff2"),
-    url("https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChang-Regular.woff")
-      format("woff"),
-    url("https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChang-Regular.ttf")
-      format("truetype");
-  font-display: swap;
+  src: url("../fonts/SUITE-woff2/SUITE-Regular.woff2") format("woff2");
 }
+
 @font-face {
-  font-family: "PyeongChang";
-  font-weight: 700;
-  font-style: normal;
-  src: url("https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChang-Bold.eot");
-  src: url("https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChang-Bold.eot?#iefix")
-      format("embedded-opentype"),
-    url("https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChang-Bold.woff2")
-      format("woff2"),
-    url("https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChang-Bold.woff")
-      format("woff"),
-    url("https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChang-Bold.ttf")
-      format("truetype");
   font-display: swap;
+  font-family: "SUITE";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/SUITE-woff2/SUITE-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "SUITE";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/SUITE-woff2/SUITE-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "SUITE";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/SUITE-woff2/SUITE-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "SUITE";
+  font-style: normal;
+  font-weight: 800;
+  src: url("../fonts/SUITE-woff2/SUITE-ExtraBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "SUITE";
+  font-style: normal;
+  font-weight: 900;
+  src: url("../fonts/SUITE-woff2/SUITE-Heavy.woff2") format("woff2");
 }
