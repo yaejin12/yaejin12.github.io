@@ -18,6 +18,7 @@ section {
     .projectTitle {
       top: 0;
       position: sticky;
+      z-index: 9;
       width: 100%;
       padding: 100px 0 80px 0;
       background-color: var(--color-bk);
@@ -56,20 +57,82 @@ section {
         }
       }
     }
-  }
+    // ========================
+    // 비디오 영상
+    // ========================
+    .videoWrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-  // ========================
-  // 비디오 영상
-  // ========================
-  .videoWrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+      .video {
+        width: 900px;
+        height: auto;
+        aspect-ratio: 16 / 9; /* 16:9 비율 유지 */
+      }
+    }
 
-    .video {
-      width: 900px;
-      height: auto;
-      aspect-ratio: 16 / 9; /* 16:9 비율 유지 */
+    // ========================
+    // 이미지 슬라이드
+    // ========================
+    .swiperContainer {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      padding-top: 50px;
+      position: relative;
+
+      .swiper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        .swiperSlide {
+          margin: 0 auto;
+
+          img {
+            height: 100%;
+            width: 100%;
+            max-width: 1020px !important; /* 원하는 최대 너비 설정 */
+            object-fit: cover; /* 이미지 크기에 맞춰 자르기 */
+          }
+        }
+      }
+
+      .swiperPagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px; /* 점들 간의 간격을 10px로 설정 */
+        position: absolute;
+        bottom: -20px;
+        z-index: 100;
+
+        .paginationBullet {
+          // border: 1.5px solid var(--color-wh) !important;
+          width: 9px !important; /* 점의 너비 */
+          height: 9px !important; /* 점의 높이 */
+          background-color: rgba(255, 255, 255, 0.5);
+          transition: background-color 0.3s, transform 0.3s; /* 애니메이션 효과 */
+          border-radius: 50% !important;
+
+          /* 활성화된 페이지네이션 점 */
+          &.active {
+            width: 18px !important;
+            height: 8px !important;
+            border-radius: 10px !important;
+            transform: scale(1.2) !important;
+            opacity: 1 !important;
+          }
+        }
+        // 1080px 이상의 화면에서는 숨기기
+        @media (min-width: 1080px) {
+          display: none;
+        }
+      }
     }
   }
 
@@ -261,6 +324,7 @@ section {
   // 열었을때
   &.open {
     background-color: var(--color-wh-sub);
+
     .detailTextWrapper {
       max-height: 1500px; /* 충분히 큰 값으로 설정 */
       opacity: 1;
@@ -343,16 +407,28 @@ section {
       .projectTitle {
         padding: 100px 0 40px 0;
       }
-    }
 
-    // ========================
-    // 비디오 영상
-    // ========================
-    .videoWrapper {
-      .video {
-        width: 800px;
-        height: auto;
-        aspect-ratio: 16 / 9; /* 16:9 비율 유지 */
+      // ========================
+      // 비디오 영상
+      // ========================
+      .videoWrapper {
+        .video {
+          width: 800px;
+          height: auto;
+          aspect-ratio: 16 / 9; /* 16:9 비율 유지 */
+        }
+      }
+      // ========================
+      // 이미지 슬라이드
+      // ========================
+      .swiperContainer {
+        padding-top: 50px;
+
+        .swiper {
+          img {
+            max-width: 800px; /* 원하는 최대 너비 설정 */
+          }
+        }
       }
     }
 
@@ -446,7 +522,7 @@ section {
 @media screen and (max-width: 1080px) {
   .projectSection {
     .projectWrapper {
-      height: 800px;
+      height: 900px;
       // 프로젝트 탑부분
       .projectTitle {
         padding: 100px 0 50px 0;
@@ -457,14 +533,36 @@ section {
           }
         }
       }
-    }
 
-    // ========================
-    // 비디오 영상
-    // ========================
-    .videoWrapper {
-      .video {
-        width: 600px;
+      // ========================
+      // 비디오 영상
+      // ========================
+      .videoWrapper {
+        .video {
+          width: 600px;
+        }
+      }
+      // ========================
+      // 이미지 슬라이드
+      // ========================
+      .swiperContainer {
+        // padding-top: 50px;
+
+        .swiperPagination {
+          gap: 6px; /* 점들 간의 간격을 10px로 설정 */
+          bottom: -20px;
+
+          .paginationBullet {
+            width: 8px !important; /* 점의 너비 */
+            height: 8px !important; /* 점의 높이 */
+
+            /* 활성화된 페이지네이션 점 */
+            &.active {
+              width: 14px !important;
+              height: 6px !important;
+            }
+          }
+        }
       }
     }
 
@@ -609,14 +707,14 @@ section {
           }
         }
       }
-    }
 
-    // ========================
-    // 비디오 영상
-    // ========================
-    .videoWrapper {
-      .video {
-        width: 500px;
+      // ========================
+      // 비디오 영상
+      // ========================
+      .videoWrapper {
+        .video {
+          width: 500px;
+        }
       }
     }
 
@@ -693,7 +791,7 @@ section {
   .projectSection {
     padding: 0 15px 0 15px;
     .projectWrapper {
-      height: 500px;
+      height: 600px;
 
       // 프로젝트 탑부분
       .projectTitle {
@@ -714,14 +812,37 @@ section {
           }
         }
       }
-    }
 
-    // ========================
-    // 비디오 영상
-    // ========================
-    .videoWrapper {
-      .video {
-        width: 350px;
+      // ========================
+      // 비디오 영상
+      // ========================
+      .videoWrapper {
+        .video {
+          width: 350px;
+        }
+      }
+
+      // ========================
+      // 이미지 슬라이드
+      // ========================
+      .swiperContainer {
+        padding-top: 30px;
+
+        .swiperPagination {
+          gap: 5px; /* 점들 간의 간격을 10px로 설정 */
+          bottom: -20px;
+
+          .paginationBullet {
+            width: 7px !important; /* 점의 너비 */
+            height: 7px !important; /* 점의 높이 */
+
+            /* 활성화된 페이지네이션 점 */
+            &.active {
+              width: 13px !important;
+              height: 5px !important;
+            }
+          }
+        }
       }
     }
 

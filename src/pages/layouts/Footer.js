@@ -1,5 +1,4 @@
 import React from "react";
-import logoGray from "../../assets/images/logo/logo_gray.svg";
 import styles from "./Layout.module.scss";
 function Footer() {
   return (

@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import useWindowWidth from "../../../assets/hooks/useWindowWidth";
+import useWindowWidth from "../../../hooks/useWindowWidth";
 
 function DetailSkills({ styles }) {
   const location = useLocation();
@@ -12,7 +12,7 @@ function DetailSkills({ styles }) {
   const skillUlRef = useRef();
 
   // 반응형 상태관리
-  const [xPercentValue, setXPercentValue] = useState(-180);
+  const [xPercentValue, setXPercentValue] = useState(-170);
   const width = useWindowWidth();
 
   const meetingSkills = useSelector((state) => {
@@ -29,7 +29,7 @@ function DetailSkills({ styles }) {
     if (width < 800) {
       setXPercentValue(-500);
     } else {
-      setXPercentValue(-180);
+      setXPercentValue(-170);
     }
   }, [width, xPercentValue]);
 

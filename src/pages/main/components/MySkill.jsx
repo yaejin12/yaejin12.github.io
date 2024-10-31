@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import useWindowWidth from "../../../assets/hooks/useWindowWidth";
+import useWindowWidth from "../../../hooks/useWindowWidth";
 
 function MySkill({ styles }) {
   const skillSectionRef = useRef();
