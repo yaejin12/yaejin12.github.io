@@ -11,7 +11,7 @@
   color: var(--color-wh);
 
   .aboutMeWrapper {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -22,6 +22,7 @@
       font-weight: 600;
       line-height: 170%;
 
+
       width: 100%;
       text-align: center;
       display: flex;
@@ -30,8 +31,10 @@
       p {
         font-weight: 300;
         span {
-          font-weight: 700;
+          font-weight: 800;
+          font-size: var(--font-size-main-base-point);
           color: var(--color-point);
+          white-space: nowrap;
         }
       }
 

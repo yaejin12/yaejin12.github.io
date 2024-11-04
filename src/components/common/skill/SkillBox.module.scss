@@ -9,6 +9,7 @@
   flex-direction: column;
   justify-content: center;
   overflow-y: auto;
+  overflow: hidden;
 
   // ===================
   // Skill title
@@ -25,27 +26,38 @@
 
   .skill {
     width: 100%;
-    display: flex;
-    align-items: center;
     white-space: nowrap;
+    display: flex;
+    position: relative;
 
     // ===================
     // 스킬 각각 글자
 
-    .skillBox {
-      font-size: var(--font-size-main-skill);
-      color: var(--color-wh);
-      margin: 0 40px;
+    .slide {
       font-weight: 500;
-      white-space: nowrap;
-
+      display: flex;
+      align-items: center;
       will-change: transform;
+
+      &.clone {
+        display: none;
+      }
+
+      // 글자
+      .item {
+        color: var(--color-wh);
+        font-size: var(--font-size-main-skill);
+        margin: 0 30px;
+        white-space: nowrap;
+      }
     }
 
     &.smallFontSize {
-      .skillBox {
-        font-size: var(--font-size-project-base);
-        margin: 0 30px;
+      .slide {
+        .item {
+          margin: 0 20px;
+          font-size: var(--font-size-project-base);
+        }
       }
     }
   }
@@ -65,12 +77,9 @@
     // ===================
     // 스킬 각각 글자
     .skill {
-      .skillBox {
-        margin: 0 25px;
-      }
-      &.smallFontSize {
-        .skillBox {
-          margin: 0 20px;
+      .slide {
+        .item {
+          margin: 0 25px;
         }
       }
     }
@@ -89,13 +98,34 @@
 
     .skill {
       // ===================
-      // 스킬 각각 글자
-      .skillBox {
-        margin: 0 20px;
+      .slide {
+        display: flex;
+        &.original {
+          animation: slideAnimation 25s linear infinite;
+        }
+        &.clone {
+          display: flex;
+          top: 0;
+          position: absolute;
+          animation: slideAnimationClone 25s linear infinite;
+        }
+        &.stop {
+          animation-play-state: paused;
+        }
+
+        .item {
+          margin: 0 20px;
+          &:hover {
+            transform: scale(1.2);
+            font-weight: 800;
+          }
+        }
       }
       &.smallFontSize {
-        .skillBox {
-          margin: 0 13px;
+        .slide {
+          .item {
+            margin: 0 15px;
+          }
         }
       }
     }
@@ -108,6 +138,7 @@
   .mySkillWrapper {
     // ===================
     // Skill title
+    position: relative;
     .title {
       margin-bottom: 10px;
     }
@@ -119,12 +150,17 @@
       // ===================
       // 스킬 각각 글자
 
-      .skillBox {
-        margin: 0 10px;
+      .slide {
+        .item {
+          margin: 0 10px;
+        }
       }
+
       &.smallFontSize {
-        .skillBox {
-          margin: 0 12px;
+        .slide {
+          .item {
+            margin: 0 10px;
+          }
         }
       }
     }
@@ -148,12 +184,9 @@
       // ===================
       // 스킬 각각 글자
 
-      .skillBox {
-        margin: 0 7px;
-      }
-      &.smallFontSize {
-        .skillBox {
-          margin: 0 8px;
+      .slide {
+        .item {
+          margin: 0 7px;
         }
       }
     }
@@ -172,10 +205,24 @@
 
     // ===================
     // 스킬 감싸는 요소
+  }
+}
 
-    .skill {
-      // ===================
-      // 스킬 각각 글자
-    }
+// 애니메이션 설정
+@keyframes slideAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slideAnimationClone {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }

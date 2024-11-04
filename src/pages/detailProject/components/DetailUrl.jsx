@@ -38,13 +38,11 @@ function DetailUrl({ styles }) {
       {/* 링크 연결 */}
       <div className={styles.urlWrapper}>
         {projectUrl &&
-          projectUrl.map((url, index) => {
+          projectUrl.map((url) => {
             return url.url.map((urlDetail, i) => {
               return (
-                <a href={urlDetail}>
-                  <div key={i} className={styles.url}>
-                    {urlName(urlDetail)}
-                  </div>
+                <a key={i} href={urlDetail}>
+                  <div className={styles.url}>{urlName(urlDetail)}</div>
                 </a>
               );
             });

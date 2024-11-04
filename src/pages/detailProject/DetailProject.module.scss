@@ -18,7 +18,7 @@ section {
     .projectTitle {
       top: 0;
       position: sticky;
-      z-index: 9;
+      z-index: 999;
       width: 100%;
       padding: 100px 0 80px 0;
       background-color: var(--color-bk);
@@ -160,6 +160,7 @@ section {
         justify-content: center;
         align-items: center;
         border: 1px solid var(--color-wh);
+        padding: 50px 65px;
 
         &:nth-child(1) {
           transform: translateX(35px);
@@ -176,7 +177,7 @@ section {
           line-height: 190%;
           font-weight: 400;
           text-align: center;
-          word-break: break-all;
+          word-break: keep-all;
 
           span {
             font-weight: 700;
@@ -445,6 +446,7 @@ section {
           width: 330px;
           height: 330px;
           border-radius: 50%;
+          padding: 50px 60px;
         }
       }
     }
@@ -573,24 +575,19 @@ section {
       padding: 0 0 150px 0;
 
       .circleWrapper {
-        flex-direction: column;
-
         .circle {
-          width: 280px;
-          height: 280px;
+          width: 224px;
+          height: 224px;
+          padding: 40px 35px;
 
           &:nth-child(1) {
-            transform: translateY(30px);
+            transform: translateX(20px);
           }
           &:nth-child(2) {
             border: 1px dashed var(--color-wh);
           }
           &:nth-child(3) {
-            transform: translateY(-30px);
-          }
-          // 원모양 text
-          p {
-            // line-height: 190%;
+            transform: translateX(-20px);
           }
         }
       }
@@ -636,11 +633,6 @@ section {
     .myContributionDetailTitleWrapper {
       padding: 30px;
 
-      // 내가 기여한 부분 타이틀
-      p {
-        // width: 200px;
-      }
-
       // ========================
       // 디테일 더보기
       .detailMore {
@@ -683,7 +675,7 @@ section {
     padding: 0 30px 0 30px;
 
     .projectWrapper {
-      height: 800px;
+      height: 700px;
 
       // 프로젝트 탑부분
       .projectTitle {
@@ -716,13 +708,56 @@ section {
           width: 500px;
         }
       }
+
+      .swiperContainer {
+        // padding-top: 50px;
+
+        .swiperPagination {
+          gap: 5px; /* 점들 간의 간격을 10px로 설정 */
+          bottom: -20px;
+
+          .paginationBullet {
+            width: 5px !important; /* 점의 너비 */
+            height: 5px !important; /* 점의 높이 */
+
+            /* 활성화된 페이지네이션 점 */
+            &.active {
+              width: 9px !important;
+              height: 4px !important;
+            }
+          }
+        }
+      }
     }
 
     // ========================
     // 프로젝트 하단 영상, 원형 부분
     // ========================
     .detailInfoWrapper {
-      padding: 0 0 120px 0;
+      padding: 0 0 150px 0;
+
+      .circleWrapper {
+        flex-direction: column;
+
+        .circle {
+          width: 280px;
+          height: 280px;
+
+          &:nth-child(1) {
+            transform: translateY(30px);
+          }
+          &:nth-child(2) {
+            border: 1px dashed var(--color-wh);
+          }
+          &:nth-child(3) {
+            transform: translateY(-30px);
+          }
+          // 원모양 text
+          p {
+            // line-height: 190%;
+          }
+        }
+      }
     }
   }
 
@@ -795,7 +830,6 @@ section {
 
       // 프로젝트 탑부분
       .projectTitle {
-        // padding: 80px 0 50px 0;
         h1 {
           font-size: 30px;
           span {
@@ -819,29 +853,6 @@ section {
       .videoWrapper {
         .video {
           width: 350px;
-        }
-      }
-
-      // ========================
-      // 이미지 슬라이드
-      // ========================
-      .swiperContainer {
-        padding-top: 30px;
-
-        .swiperPagination {
-          gap: 5px; /* 점들 간의 간격을 10px로 설정 */
-          bottom: -20px;
-
-          .paginationBullet {
-            width: 7px !important; /* 점의 너비 */
-            height: 7px !important; /* 점의 높이 */
-
-            /* 활성화된 페이지네이션 점 */
-            &.active {
-              width: 13px !important;
-              height: 5px !important;
-            }
-          }
         }
       }
     }

@@ -26,11 +26,13 @@ body {
 
 /* 루트 */
 :root {
-  --color-bk: #171717;
-  --color-bk-text: #182134;
+  --color-bk: #151515;
+  --color-bk-text: #151515;
+  /* --color-bk-text: #182134; */
   --color-gr: #7a7a7a;
   --color-gr-l: #aeaeae;
   --color-point: #3476f5;
+  /* --color-point-sub: #4699ff; */
   --color-wh-sub: #e1f2fc;
   --color-wh: #ffffff;
   --color-error: #ff0000;
@@ -47,6 +49,8 @@ body {
   /*  */
   --font-size-title: 65px;
   --font-size-main-base: 45px;
+  --font-size-main-base-point: 49px;
+  --font-size-main-sub: 17px;
   --font-size-main-skill: 35px;
 }
 
@@ -68,8 +72,10 @@ body {
     --font-size-project-base: 20px;
     --font-size-project-base-sub: 17px;
     /*  */
-    --font-size-title: 55px;
+    --font-size-title: 45px;
     --font-size-main-base: 35px;
+    --font-size-main-base-point: 39px;
+
     --font-size-main-skill: 25px;
   }
 }
@@ -82,8 +88,10 @@ body {
     --font-size-project-base-sub: 13px;
     --font-size-footer: 10px;
     /*  */
-    --font-size-title: 45px;
+    --font-size-title: 40px;
     --font-size-main-base: 25px;
+    --font-size-main-base-point: 29px;
+    --font-size-main-sub: 14px;
     --font-size-main-skill: 15px;
   }
 }
@@ -97,6 +105,8 @@ body {
     --font-size-sm: 11px;
     --font-size-title: 35px;
     --font-size-main-base: 25px;
+    --font-size-main-base-point: 29px;
+    --font-size-main-sub: 12px;
   }
 }
 
@@ -107,7 +117,8 @@ body {
   }
   :root {
     --font-size-title: 25px;
-    --font-size-main-base: 16px;
+    --font-size-main-base: 14px;
+    --font-size-main-base-point: 17px;
     --font-size-main-skill: 14px;
 
     /*  */
@@ -120,5 +131,6 @@ body {
   :root {
     --font-size-title: 20px;
     --font-size-main-base: 14px;
+    --font-size-main-base-point: 19px;
   }
 }

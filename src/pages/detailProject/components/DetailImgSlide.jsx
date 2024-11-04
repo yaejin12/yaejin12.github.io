@@ -17,7 +17,7 @@ function DetailImgSlide({ styles, projectImg }) {
         centeredSlides={true}
         loop={true}
         slidesPerView={1}
-        autoplay={{ delay: 4500, disableOnInteraction: false }}
+        autoplay={{ delay: 2500, disableOnInteraction: false }}
         coverflowEffect={{
           rotate: 0,
           stretch: 10,

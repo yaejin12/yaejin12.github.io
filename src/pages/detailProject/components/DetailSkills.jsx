@@ -12,7 +12,7 @@ function DetailSkills({ styles }) {
   const skillUlRef = useRef();
 
   // 반응형 상태관리
-  const [xPercentValue, setXPercentValue] = useState(-170);
+
   const width = useWindowWidth();
 
   const meetingSkills = useSelector((state) => {
@@ -25,28 +25,35 @@ function DetailSkills({ styles }) {
     }
   });
 
-  useEffect(() => {
-    if (width < 800) {
-      setXPercentValue(-500);
-    } else {
-      setXPercentValue(-170);
-    }
-  }, [width, xPercentValue]);
-
-  //  // kill 애니메이션
+  //  // skill 애니메이션
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    gsap.to(skillUlRef.current, {
-      xPercent: xPercentValue,
-      ease: "none",
-      scrollTrigger: {
-        trigger: skillSectionRef.current,
-        pin: false,
-        scrub: 1,
-        start: "top center",
-        end: "10%",
-      },
-    });
+    let animation;
+    console.log(width);
+
+    if (width >= 1080) {
+      animation = gsap.to(skillUlRef.current, {
+        xPercent: -130,
+        ease: "none",
+        scrollTrigger: {
+          trigger: skillSectionRef.current,
+          pin: false,
+          scrub: 1,
+          start: "center center",
+          end: "10%",
+        },
+      });
+    } else if (animation) {
+      animation.scrollTrigger.kill();
+      animation.kill();
+    }
+
+    return () => {
+      if (animation) {
+        animation.scrollTrigger.kill();
+        animation.kill();
+      }
+    };
   }, [width]);
 
   return (

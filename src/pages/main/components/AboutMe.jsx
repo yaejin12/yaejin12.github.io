@@ -14,16 +14,27 @@ function AboutMe({ styles }) {
     refs.current.map((ref) => {
       gsap.fromTo(
         ref,
-        { opacity: 0.01 },
+        {
+          opacity: 0.0,
+          yPercent: 50, // 아래에서 시작
+        },
         {
           opacity: 1,
+
           scrollTrigger: {
             trigger: ref,
-            start: "center center", // 요소가 화면의 80% 위치에 도달할 때 시작
-            end: "center top 30%", // 요소가 화면의 20% 위치에 도달할 때 종료
+            yPercent: 0,
+            start: "center 80%",
+            end: "center 30%", // 요소가 화면의 20% 위치에 도달할 때 종료
             scrub: true,
-            pin: true,
-            onLeave: () => gsap.to(ref, { opacity: 0.01 }), // 스크롤이 끝난 뒤 opacity를 0.1으로
+            // pin: true,
+            onLeave: () =>
+              gsap.to(ref, {
+                opacity: 0.0,
+                yPercent: -50,
+              }), // 스크롤이 끝난 뒤 opacity를 0.1으로
+            onEnterBack: () => gsap.to(ref, { opacity: 1, yPercent: 0 }), // 스크롤이 올라갈 때 opacity 증가
+            onLeaveBack: () => gsap.to(ref, { opacity: 0.0, yPercent: 50 }), // 스크롤이 위로 지나갈 때 opacity 감소
           },
         }
       );
