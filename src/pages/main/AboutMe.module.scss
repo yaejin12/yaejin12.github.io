@@ -22,7 +22,6 @@
       font-weight: 600;
       line-height: 170%;
 
-
       width: 100%;
       text-align: center;
       display: flex;
@@ -35,6 +34,14 @@
           font-size: var(--font-size-main-base-point);
           color: var(--color-point);
           white-space: nowrap;
+        }
+
+        img {
+          max-width: 13%;
+          width: 13%;
+          margin-top: 1%;
+          animation: mainPathAni 3s infinite ease-in-out;
+          animation-delay: 2s;
         }
       }
 
@@ -83,6 +90,20 @@
   }
 }
 
+@media screen and (max-width: 800) {
+  .aboutMeSection {
+    .aboutMeWrapper {
+      //About Me
+      .h1Title {
+        opacity: 0;
+        &.animation {
+          animation: fadeInUp 0.5s ease-out forwards;
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 768px) {
   // ========================
   // 반응형 768px my skill
@@ -106,5 +127,28 @@
   // 반응형 320px my skill
   .mySkillSection {
     padding: 0 8px;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(80px); /* 아래에서 시작 */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* 제자리 */
+  }
+}
+
+@keyframes mainPathAni {
+  0% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translateY(10%);
+  }
+  100% {
+    transform: translate(0, 0);
   }
 }

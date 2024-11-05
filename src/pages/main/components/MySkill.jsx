@@ -8,7 +8,7 @@ import useWindowWidth from "../../../hooks/useWindowWidth";
 function MySkill({ styles }) {
   const skillSectionRef = useRef();
   const skillUlRef = useRef();
-  const width = useWindowWidth();
+  const { width } = useWindowWidth();
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);

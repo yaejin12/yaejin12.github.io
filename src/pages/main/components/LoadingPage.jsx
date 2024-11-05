@@ -35,7 +35,7 @@ function LoadingPage({ setIsLoading }) {
         { y: 0, opacity: 1 } // 떠오른 후 위치와 불투명도
       )
       .to([Ref.current.yaeRef, Ref.current.jinRef, Ref.current.portfolioRef], {
-        y: "+=25", // 위아래로 움직일 범위
+        y: "+=20", // 위아래로 움직일 범위
         repeat: 3, // 약 2초 동안 반복
         yoyo: true, // 위로 올라갔다가 다시 내려옵니다.
         ease: "sine.inOut", // 자연스러운 움직임을 위한 이징

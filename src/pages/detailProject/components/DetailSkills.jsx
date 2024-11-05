@@ -13,7 +13,7 @@ function DetailSkills({ styles }) {
 
   // 반응형 상태관리
 
-  const width = useWindowWidth();
+  const { width } = useWindowWidth();
 
   const meetingSkills = useSelector((state) => {
     if (location.pathname === "/1") {
@@ -29,7 +29,6 @@ function DetailSkills({ styles }) {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     let animation;
-    console.log(width);
 
     if (width >= 1080) {
       animation = gsap.to(skillUlRef.current, {

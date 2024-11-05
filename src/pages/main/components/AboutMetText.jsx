@@ -1,6 +1,11 @@
+import img from "../../../assets/images/img/jin_F.png";
 export const aboutMeText = [
   <>About Me</>,
-  <>1996년 12월 5일생</>,
+  <>
+    1996년 12월 5일생
+    <br />
+    <img src={img} />
+  </>,
   <>
     <span>“END가 아닌 AND로”</span> <br />
     새로운 도전을 두려워 하지 않고, <br />
@@ -14,7 +19,8 @@ export const aboutMeText = [
   </>,
   <>
     즐겁게 개발하며, 팀원들과 함께 <br />
-    <span>의미 있는 성과를 만들어 나가고 싶습니다.</span> <br />
-    감사합니다
+    <span>
+      의미 있는 성과를 만들어 <br /> 나가고 싶습니다.
+    </span>
   </>,
 ];

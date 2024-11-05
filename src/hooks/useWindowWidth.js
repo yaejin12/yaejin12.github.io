@@ -2,11 +2,14 @@ import { debounce } from "lodash";
 import React, { useCallback, useEffect, useState } from "react";
 
 function useWindowWidth() {
-  const [width, setWidth] = useState(window.innerWidth);
+  const [width, setWidth] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
 
   const handleResize = useCallback(
     debounce(() => {
-      setWidth(window.innerWidth);
+      setWidth({ width: window.innerWidth, height: window.innerHeight });
     }, 1500),
     []
   );

@@ -24,11 +24,11 @@ const SkillBox = forwardRef(({ skills, title, size }, ref) => {
         className={`${styles.skill} ${
           size === "small" ? styles.smallFontSize : ""
         }`}
-        ref={ref}
         onMouseEnter={onMouseEnterHandler}
         onMouseLeave={onMouseLeaveHandler}
       >
         <div
+          ref={ref}
           className={`${styles.slide} ${styles.original} ${
             animate ? "" : styles.stop
           }`}
