@@ -35,7 +35,7 @@ function MenuClickPage({ styles }) {
         }`}
         ref={ref}
       >
-        <div className={styles.gnb}>
+        <nav className={styles.gnb}>
           <NavLink to={"/"}>
             <p>홈</p>
           </NavLink>
@@ -45,7 +45,7 @@ function MenuClickPage({ styles }) {
           <NavLink to={"/2"}>
             <p>나의 애착페이지 웹</p>
           </NavLink>
-        </div>
+        </nav>
       </div>
     </>
   );
