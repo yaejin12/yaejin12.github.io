@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import mainImg from "../../../assets/images/img/main_G.png";
-import pathImg from "../../../assets/images/img/path_B.png";
+import mainImg from "../../../assets/images/img/main_G.webp";
+import pathImg from "../../../assets/images/img/path_B.webp";
 import gitImg from "../../../assets/images/icons/arrow_git.svg";
 
 import { useGSAP } from "@gsap/react";
@@ -71,7 +71,7 @@ function MainBanner({ styles, isLoading }) {
               eyj5202@naver.com
             </p>
             <div className={styles.scroll}>
-            <span></span>
+              <span></span>
             </div>
             <a href="https://github.com/yaejin12" alt="yaejin Git Hub">
               <p>

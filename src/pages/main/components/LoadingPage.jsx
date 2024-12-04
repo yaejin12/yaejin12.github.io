@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import styles from "./LoadingPage.module.scss";
-import yae from "../../../assets/images/img/name_yae.png";
-import jin from "../../../assets/images/img/name_jin.png";
-import portfolio from "../../../assets/images/img/main_.png";
+import yae from "../../../assets/images/img/name_yae.webp";
+import jin from "../../../assets/images/img/name_jin.webp";
+import portfolio from "../../../assets/images/img/main_.webp";
 import gsap from "gsap";
 
 function LoadingPage({ setIsLoading }) {
